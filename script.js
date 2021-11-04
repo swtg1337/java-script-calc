@@ -13,10 +13,6 @@ function calc() {
             { 
             document.getElementById('result').value = (eval(input.value));
             }
-    if (document.getElementById('result').value == "")
-        {
-            alert('Выражение введено некорректно')
-        }
-   
+       
     
 }
