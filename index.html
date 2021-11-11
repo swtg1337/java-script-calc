@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор</title>
-    <script src="/script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <input type = "text"   id = "input">
-    <button type = "submit"  onclick = "calc()">Посчитать</button>
-    <button type = "submit"  onclick = "clearall()">Очистить</button>  
+    <label class = "text-field__label" for="input">Калькулятор онлайн</label>
+    <p> <input placeholder = "Введите выражение" class = "text-field__input" type = "text" id = "input" name = "input"> </p>
+    <button class = "button" type = "submit"  onclick = "calc()">Посчитать</button>
+    <button class = "button" type = "submit"  onclick = "clearall()">Очистить</button>  
     <p> <output class = "style1" id = "result"></output> </p>
+    <script src="./script.js"></script>
 </body>
 </html>
