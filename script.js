@@ -1,11 +1,11 @@
 function clearall() {
-    document.getElementById('input').value = "";
+    document.getElementById('expression').value = "";
     document.getElementById('result').value = "";
     document.getElementById('error').style.display = "none";
 }
 
 function calc() {
-    let x = document.getElementById('input').value;
+    let x = document.getElementById('expression').value;
     if (!x){
         document.getElementById('result').value = "";
         document.getElementById('error').innerHTML = '<b>Ошибка!</br>Поле для ввода пустое</b>';
@@ -25,6 +25,12 @@ function calc() {
     }  
 }
 
+function displayError (message) {
+    document.getElementById('result').value = "";
+    document.getElementById('error').innerHTML = `<b>Ошибка!</br>${message}</b>`;
+    document.getElementById('error').style.display = "block";
+}
+
 function SwitchResult(a,b,c){
     switch (a) {
         case '+':
@@ -37,9 +43,9 @@ function SwitchResult(a,b,c){
             document.getElementById('result').value = b * c;
             break;
         case '/': 
-            document.getElementById('result').value = b / c;   
+            if (c != 0) {
+            document.getElementById('result').value = b / c;  
+            } else {displayError('На ноль делить нельзя')
+            } 
     }
 }
-
-
-
